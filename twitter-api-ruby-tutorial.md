@@ -6,33 +6,38 @@ Note: this tutorial is written using Github Flavored Markdown (GFM) for clarity 
 
 ### Some assumptions
 
-* Ruby is installed and functionnal
-* You are connected to the network
-* You can follow simple instructions ;-)
+* Ruby is installed and functional
+* The twitter gem is ~ version 5.11.0
+* You have [registered](https://dev.twitter.com/apps) your new app with Twitter
 
 ### Getting started, installing the Twitter Ruby Gem and calling the Twitter Rest API
 
-First thing you need to do: install the Twitter Ruby Gem.
-
-You can find it at http://twitter.rubyforge.org/
+First thing you need to do: install the [Twitter Ruby Gem](http://twitter.rubyforge.org/).
 
 Then open your terminal and type:
 
-    gem install twitter
+    sudo gem install twitter
 
-If everything works fine (why shouldn't it?) you will get a welcome message after fetching the gem is done. The latest version of this gem at the time of writing was twitter-2.1.0.gem.
+If everything works fine you will get a message after fetching and installing the gem is done. The latest version of this gem at the time of writing was twitter-5.11.0.
 
-We will now create a simple file to get started. Create a file called twitter.rb with the two following lines:
+We will now create a simple file to get started. Create a file called twitter.rb with the following lines:
 
 ```ruby
 require 'twitter'
-puts Twitter.status(167309659198328832).text 
+
+config = {
+  consumer_key: "API-KEY",
+  consumer_secret: "API-SECRET"
+}
+
+client = Twitter::REST::Client.new(config)
+puts client.status(167309659198328832).text
  ```
 Save it (duh). When you excute twitter.rb, you will get the tweet with ID "167309659198328832" in your terminal output. It's a message from @twitterapi, check http://twitter.com/twitterapi/status/167309659198328832 to compare both. 
 
 Now that we know that everything is working, let's move to the next level. We will explore the main concepts of the Twitter Rest API and of building Twitter applications.
 
-(note: what if it doesn't work, add a little bit of troubleshooting help).
+<style "display:none">TODO: add troubleshooting tips</style>
 
 ### Understanding the main concepts
 
