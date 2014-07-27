@@ -1,6 +1,6 @@
 Note: this tutorial is written using Github Flavored Markdown (GFM) for clarity (and usefulness). It was originally authored by [@sylvaincarle](https://github.com/sylvaincarle) and has been edited and updated by [@wh1tney](http://www.github.com/wh1tney) (7/26/2014).
 
-# Getting started with the Twitter API using Ruby
+# Introduction to the Ruby Twitter API
 
 A simple tutorial, providing code and context.
 
