@@ -44,6 +44,16 @@ Now that we know that everything is working, let's move to the next level. We wi
 
 Twitter APIs (yes, there is more than one to account for different programming languages) are documented [here](https://dev.twitter.com/docs). That's a lot of material, but it might be difficult at first to piece together all the information you need, hence this more "procedural" tutorial. Once you walk through the steps here, you will have a better idea of what you should be searching for in all the available documentation.
 
+#### Making a request (application-only)
+
+Imagine you want to request a public user's list of tweets. You do not have to be signed in to accomplish this; that's what is meant by *application-only*.
+
+All you need to make this request is a base URL (which stays the same), an endpoint (basically, the first thing that comes after the base url, e.g. https://api.twitter.com/**users**), and some other bits to include at the end of the URL. Easy, right?
+
+#### API method calls
+
+The point is to construct the request as a URL, then send it along to the Twitter server and hope to get some data back. Then do something fun with the data. You can accomplish all of this in the language of your choice, from JavaScript to Ruby. The choice is yours; there are interfaces to the Twitter API for [most popular languages](https://dev.twitter.com/docs/twitter-libraries).
+
 ### Notes
 
 #### What is OAuth, how does it work?
