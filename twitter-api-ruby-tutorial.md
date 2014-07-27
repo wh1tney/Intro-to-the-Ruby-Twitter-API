@@ -56,7 +56,7 @@ Note: You can accomplish all of this in the language of your choice, from JavaSc
 
 #### Example API request
 
-Here is how you would get a bunch of Tweet objects that represent the last 50 (fascinating) tweets from [@wjoba](http://twitter.com) using Ruby method calls.
+Here is an example that retrieves Tweet objects representing 50 recent (fascinating) tweets by [@wjoba](http://twitter.com) using Ruby method calls.
 
 ```ruby
 def collect_with_max_id(collection=[], max_id=nil, &block)
@@ -73,20 +73,24 @@ def client.get_all_tweets(user)
   end
 end
 
-puts client.get_all_tweets("wjoba")
+recent_tweets = client.get_all_tweets("wjoba")
 ```
 
-After we get these objects, we can do anything we want with the data packaged inside them. Maybe we just want to print them as text to the console.
+After we get these objects, we can do anything we want with the data packaged inside them. Maybe we just want to print the content of each tweet to the console.
 
 ```ruby
-
+recent_tweets.each do |tweet|
+	puts tweet.full_text
+end
 ```
+
+That's all there is to it.
 
 ### Notes
 
 #### What is OAuth, how does it work?
 
-Who cares? If you're a beginner, read a few lines on the [wikipedia page](http://en.wikipedia.org/wiki/Oauth) then don't worry about it for now.
+Who cares? If you're a beginner, read a few lines on the [wikipedia page](http://en.wikipedia.org/wiki/Oauth) then don't worry about it for now. Learn more about it as you build it into your app.
 
 #### Understanding the rate limitation
 
@@ -96,4 +100,7 @@ Twitter enforces a rate limit for third party apps which restricts the number of
 
 #### Twitter for Mac Developer Console
 
-Use the Developer Console that comes with the Twitter for Mac app to test API calls.
+Use the Developer Console that comes with the [Twitter for Mac](https://itunes.apple.com/us/app/twitter/id409789998?mt=12) app to test API calls (in the form of a fully-qualified URL).
+
+![Developer Menu in Twitter for Mac](developer.png)
+![Developer Console](console.png)
