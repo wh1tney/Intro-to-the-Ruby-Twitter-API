@@ -41,22 +41,17 @@ Now that we know that everything is working, let's move to the next level. We wi
 
 ### Understanding the main concepts
 
-Twitter APIs (yes, there is more than one) are documented at https://dev.twitter.com/docs, there's a lot of material there but it might be difficult at first to piece together all the information you need, hence this more "procedural" tutorial. Once you walk thru the steps here, you will have a better idea of what you should be searching for in all the available documentation.
-
-### Registering your first Twitter application
-
-#### What is OAuth, how does it work?
-
-#### A few decisions to take
-
-### Understanding the rate limitation
-
-
-
-
-
-
+Twitter APIs (yes, there is more than one to account for different programming languages) are documented [here](https://dev.twitter.com/docs). That's a lot of material, but it might be difficult at first to piece together all the information you need, hence this more "procedural" tutorial. Once you walk through the steps here, you will have a better idea of what you should be searching for in all the available documentation.
 
 ### Notes
 
-Tested with Ruby 1.9.3p0 on OSX 10.7
+#### What is OAuth, how does it work?
+
+Who cares? If you're a beginner, read a few lines on the [wikipedia page](http://en.wikipedia.org/wiki/Oauth) then don't worry about it for now.
+
+#### Understanding the rate limitation
+
+Twitter enforces a rate limit for third party apps which restricts the number of Twitter API requests that can be performed within the app for each user account. An API request can be thought of as a single Twitter operation, such as refreshing a timeline or sending a tweet.
+
+**tl;dr** – don't send a bunch of requests in a short period of time.
+
