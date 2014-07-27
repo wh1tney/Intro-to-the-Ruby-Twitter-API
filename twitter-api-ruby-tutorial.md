@@ -25,12 +25,13 @@ We will now create a simple file to get started. Create a file called twitter.rb
 ```ruby
 require 'twitter'
 
-config = {
-  consumer_key: "API-KEY",
-  consumer_secret: "API-SECRET"
-}
+client = Twitter::REST::Client.new do |config|
+  config.consumer_key        = "YOUR_CONSUMER_KEY"
+  config.consumer_secret     = "YOUR_CONSUMER_SECRET"
+  config.access_token        = "YOUR_ACCESS_TOKEN"
+  config.access_token_secret = "YOUR_ACCESS_SECRET"
+end
 
-client = Twitter::REST::Client.new(config)
 puts client.status(167309659198328832).text
  ```
 Save it (duh). When you excute twitter.rb, you will get the tweet with ID "167309659198328832" in your terminal output. It's a message from @twitterapi, check http://twitter.com/twitterapi/status/167309659198328832 to compare both. 
@@ -55,3 +56,6 @@ Twitter enforces a rate limit for third party apps which restricts the number of
 
 **tl;dr** – don't send a bunch of requests in a short period of time.
 
+#### Twitter for Mac Developer Console
+
+Use the Developer Console that comes with the Twitter for Mac app to test API calls.
