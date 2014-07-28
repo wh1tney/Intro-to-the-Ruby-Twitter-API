@@ -75,7 +75,7 @@ end
 
 recent_tweets = client.get_all_tweets("wjoba")
 ```
-Note that this method makes several calls to Twitter's [user_timeline](https://dev.twitter.com/docs/api/1.1/get/statuses/user_timeline) API method which has several option parameters that can be modified by adjusting the options hash passed in as an argument.
+Note, these methods makes several calls to Twitter's [user_timeline](https://dev.twitter.com/docs/api/1.1/get/statuses/user_timeline) API which accepts several option parameters.
 After we get these objects, we can do anything we want with the data packaged inside them. Maybe we just want to print the content of each tweet to the console.
 
 ```ruby
