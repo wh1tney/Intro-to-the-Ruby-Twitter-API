@@ -56,7 +56,7 @@ Note: You can accomplish all of this in the language of your choice, from JavaSc
 
 #### Example API request
 
-Here is an example that retrieves Tweet objects representing 50 recent (fascinating) tweets by [@wjoba](http://twitter.com) using Ruby method calls.
+Here is an example that retrieves all of the most recent (fascinating) tweets by [@wjoba](http://twitter.com) using Ruby method calls.
 
 ```ruby
 def collect_with_max_id(collection=[], max_id=nil, &block)
@@ -75,7 +75,7 @@ end
 
 recent_tweets = client.get_all_tweets("wjoba")
 ```
-
+Note that this method makes several calls to Twitter's [user_timeline](https://dev.twitter.com/docs/api/1.1/get/statuses/user_timeline) API method which has several option parameters that can be modified by adjusting the options hash passed in as an argument.
 After we get these objects, we can do anything we want with the data packaged inside them. Maybe we just want to print the content of each tweet to the console.
 
 ```ruby
